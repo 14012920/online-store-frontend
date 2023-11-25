@@ -15,7 +15,7 @@ export default function Login() {
 
   const onPressLogin = async () => {
     console.log("called");
-    await fetch("online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/user/login", {
+    await fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/user/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

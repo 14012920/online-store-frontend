@@ -23,7 +23,7 @@ export default function Myorder() {
   const [orderList, setOrderList] = useState([]);
 
   const getOrderList = () => {
-    fetch("online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/order/getUserOrder", {
+    fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/order/getUserOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
 
