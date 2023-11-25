@@ -29,7 +29,7 @@ export default function ShippingInfo() {
       country: "india",
       phoneNo: data?.mobile,
     };
-    fetch("http://localhost:4000/api/order/saveOrder", {
+    fetch("online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/order/saveOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
 
@@ -53,7 +53,7 @@ export default function ShippingInfo() {
       .catch((error) => console.log(error));
   };
   const createOrder = async () => {
-    const data = await fetch("http://localhost:4000/api/payment/razorpay", {
+    const data = await fetch("online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/payment/razorpay", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -82,7 +82,7 @@ export default function ShippingInfo() {
           razorpaySignature: response.razorpay_signature,
         };
         const result = await fetch(
-          "http://localhost:4000/api/payment/verification",
+          "online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/payment/verification",
           {
             headers: { "Content-Type": "application/json" },
             method: "POST",

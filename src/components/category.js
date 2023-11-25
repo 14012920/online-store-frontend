@@ -43,7 +43,7 @@ export default function Category() {
   const [catList, setCatList] = useState([]);
 
   const getCatList = () => {
-    fetch("http://localhost:4000/api/static/catlist")
+    fetch("online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/static/catlist")
       .then((r) => r.json())
       .then((res) => {
         console.log("CATAATTTTRES", res);
