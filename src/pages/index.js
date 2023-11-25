@@ -45,7 +45,7 @@ const Home = ({ products,heroSection }) => {
 };
 export async function getStaticProps(context) {
   try {
-    const res = await fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/products/");
+    const res = await fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/products");
     const response = await res.json();
     const heroRes = await fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/static/heroSection");
     const heroResponse = await heroRes.json();
