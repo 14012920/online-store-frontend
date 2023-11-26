@@ -228,7 +228,8 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params }) {
-  const res = await fetch(`https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/products/${params?._id}`);
+  const path = process.env.NEXT_PUBLIC_API_PATH
+  const res = await fetch(`${path}/products/${params?._id}`);
   const response = await res.json();
   return {
     // Passed to the page component as props

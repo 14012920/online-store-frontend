@@ -14,8 +14,8 @@ export default function Login() {
   const [password, setPassword] = useState("12345");
 
   const onPressLogin = async () => {
-    console.log("called");
-    await fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/user/login", {
+    const path = process.env.NEXT_PUBLIC_API_PATH
+    await fetch(`${path}/api/user/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

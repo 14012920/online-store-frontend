@@ -230,10 +230,10 @@ export default function Navbar({ cartCount }) {
                       >
                         <div
                           id="dropdownHover"
-                          class="z-30 mt-5 bg-white divide-y divide-gray-100 rounded-sm shadow w-44 "
+                          className="z-30 mt-5 bg-white divide-y divide-gray-100 rounded-sm shadow w-44 "
                         >
                           <ul
-                            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
                             aria-labelledby="dropdownHoverButton"
                           >
                             {dropDownList.map((item) => (

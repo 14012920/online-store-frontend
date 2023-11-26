@@ -43,15 +43,15 @@ export default function Category() {
   const [catList, setCatList] = useState([]);
 
   const getCatList = () => {
-    fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/static/catlist",
-      {mode: "no-cors"}
+    const path = process.env.NEXT_PUBLIC_API_PATH
+    fetch(`${path}/api/static/catlist`,
     )
       .then((r) => r.json())
       .then((res) => {
         console.log("CATAATTTTRES", res);
         setCatList(res.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("ERRRRRRPP",error));
   };
 
   useEffect(() => {
@@ -68,8 +68,8 @@ export default function Category() {
 
           <div className="items-center justify-center mt-2 grid grid-cols-2 gap-4 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {catList.map((callout) => (
-               <Link href={`/catwise-products/${callout._id}`}>
-              <div key={callout.name}>
+               <Link key={callout.name} href={`/catwise-products/${callout._id}`}>
+              <div >
                 <div className="relative h-40  overflow-hidden  bg-white  sm:aspect-w-1 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75">
                   <Image
                     loader={externaImageLoader}

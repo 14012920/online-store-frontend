@@ -23,7 +23,8 @@ export default function Myorder() {
   const [orderList, setOrderList] = useState([]);
 
   const getOrderList = () => {
-    fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/order/getUserOrder", {
+    const path = process.env.NEXT_PUBLIC_API_PATH
+    fetch(`${path}/api/order/getUserOrder`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
 

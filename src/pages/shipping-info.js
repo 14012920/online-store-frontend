@@ -29,7 +29,8 @@ export default function ShippingInfo() {
       country: "india",
       phoneNo: data?.mobile,
     };
-    fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/order/saveOrder", {
+    const path = process.env.NEXT_PUBLIC_API_PATH
+    fetch(`${path}/api/order/saveOrder`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
 
@@ -53,7 +54,8 @@ export default function ShippingInfo() {
       .catch((error) => console.log(error));
   };
   const createOrder = async () => {
-    const data = await fetch("https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/payment/razorpay", {
+    const path = process.env.NEXT_PUBLIC_API_PATH
+    const data = await fetch(`${path}/api/payment/razorpay`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -81,8 +83,9 @@ export default function ShippingInfo() {
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
         };
+        const path = process.env.NEXT_PUBLIC_API_PATH
         const result = await fetch(
-          "https://online-store-c3ujtnbe7-manoj-sonis-projects.vercel.app/api/payment/verification",
+         `${path}/api/payment/verification`,
           {
             headers: { "Content-Type": "application/json" },
             method: "POST",
