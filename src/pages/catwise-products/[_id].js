@@ -57,7 +57,7 @@ const CatwiseProducts = ({catInfo}) => {
   export async function getStaticPaths() {
     return {
       paths: [],
-      fallback: false, // can also be true or 'blocking'
+      fallback: 'blocking', // can also be true or 'blocking'
     };
   }
   
@@ -69,5 +69,6 @@ const CatwiseProducts = ({catInfo}) => {
     return {
       // Passed to the page component as props
       props: { catInfo: response },
+      revalidate: 10, 
     };
   }
